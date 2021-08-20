@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pq="http://java.sun.com/jsf/composite"
+      xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+    <title>Listing</title>
+</h:head>
+<h:body>
+    <h:form id="formPersonTable">
+        <p:dataTable id="tablePerson" value="#{personController.personList}" var="personVar">
+            <p:column headerText="Last Name:">
+                <p:outputLabel value="#{personVar.lastName}"/>
+            </p:column>
+            <p:column headerText="Fist Name:">
+                <p:outputLabel value="#{personVar.firstName}"/>
+            </p:column>
+            <p:column headerText="Gender:">
+                <p:outputLabel value="#{personVar.gender}"/>
+            </p:column>
+            <p:column headerText="Birth Day:">
+                <p:outputLabel value="#{personVar.birthDay}"/>
+            </p:column>
+            <p:column headerText="City:">
+                <p:outputLabel value="#{personVar.city}"/>
+            </p:column>
+            <p:column headerText="E-mail:">
+                <p:outputLabel value="#{personVar.email}"/>
+            </p:column>
+
+            <p:column headerText="Actions">
+                <p:commandButton value="Update" onclick="PF('dlgUpdateInfos').show()" update=":formUpdateInfos">
+                    <f:setPropertyActionListener target="#{personController.person}" value="#{personVar}"/>
+                </p:commandButton>
+
+                <p:commandButton value="Delete" onclick="PF('dlgDelete').show()">
+                    <f:setPropertyActionListener target="#{personController.person}" value="#{personVar}"/>
+
+                </p:commandButton>
+            </p:column>
+        </p:dataTable>
+        <p:commandButton value="Update Form" update="@form"/>
+    </h:form>
+
+    <p:dialog widgetVar="dlgUpdateInfos" resizable="false" header="Update info">
+        <h:form id="formUpdateInfos">
+
+            <p:outputLabel value="Last Name: "/>
+            <p:inputText value="#{personController.person.lastName}"/>
+            <br/>
+            <p:outputLabel value="First Name: "/>
+            <p:inputText value="#{personController.person.firstName}"/>
+            <br/>
+            <p:outputLabel value="Birthday:: "/>
+            <p:calendar value="#{personController.person.birthDay}"/>
+            <br/>
+            <p:outputLabel value="Gender: "/>
+            <p:inputText value="#{personController.person.gender}"/>
+            <br/>
+            <p:outputLabel value="E-mail: "/>
+            <p:inputText value="#{personController.person.email}"/>
+            <br/>
+            <p:outputLabel value="City: "/>
+            <p:inputText value="#{personController.person.city}"/>
+            <br/>
+
+            <p:commandButton value="Confirm"
+                             action="#{personController.updatePerson}"
+                             update=":formPersonTable"
+                             onclick="PF('dlgUpdateInfos').hide()"/>
+
+        </h:form>
+
+    </p:dialog>
+
+
+    <p:dialog widgetVar="dlgDelete" resizable="false" header="Delete">
+        <h:form id="formDeleteInfo">
+            <p:outputLabel value="Do you really want to delete?"/>
+            <br/>
+            <p:commandButton value="Yes"
+                             action="#{personController.deletePerson}"
+                             update=":formPersonTable"
+                             onclick="PF('dlgDelete').hide()"/>
+            <br/>
+            <p:commandButton value="No" onclick="PF('dlgDelete').hide()">
+            </p:commandButton>
+
+        </h:form>
+
+    </p:dialog>
+
+</h:body>
+
+</html>

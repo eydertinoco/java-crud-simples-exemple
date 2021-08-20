@@ -1,0 +1,36 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="projeto-exemplo-crud:war exploded">
+    <output-path>$PROJECT_DIR$/target/projeto-exemplo-crud-1.0-SNAPSHOT</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>projeto-exemplo-crud</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="projeto-exemplo-crud" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.glassfish:javax.faces:2.4.0" />
+          <element id="library" level="project" name="Maven: javax.el:javax.el-api:3.0.1-b04" />
+          <element id="library" level="project" name="Maven: org.glassfish:javax.el:3.0.1-b04" />
+          <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
+          <element id="library" level="project" name="Maven: org.jboss.weld.servlet:weld-servlet:2.4.8.Final" />
+          <element id="library" level="project" name="Maven: org.postgresql:postgresql:42.2.20" />
+          <element id="library" level="project" name="Maven: org.checkerframework:checker-qual:3.5.0" />
+          <element id="library" level="project" name="Maven: org.primefaces:primefaces:5.0" />
+          <element id="library" level="project" name="Maven: org.primefaces.extensions:primefaces-extensions:1.2.1" />
+          <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.2.4" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.1" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/projeto-exemplo-crud-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="projeto-exemplo-crud/web/Web" />
+    </root>
+  </artifact>
+</component>
