@@ -1,0 +1,42 @@
+@mixin for-scroll-350 {
+  @media (max-height: 350.98px) { @content; }
+}
+@mixin for-scroll-400 {
+  @media (min-height: 351px) and (max-height: 400.98px) { @content; }
+}
+@mixin for-scroll-500 {
+  @media (min-height: 401px) and (max-height: 500.98px) { @content; }
+}
+@mixin for-scroll-600 {
+  @media (min-height: 501px) and (max-height: 600.98px) { @content; }
+}
+@mixin for-scroll-700 {
+  @media (min-height: 601px) and (max-height: 700.98px) { @content; }
+}
+@mixin for-scroll-plus {
+  @media (min-height: 701px) { @content; }
+}
+
+.generico {
+  &__scrollPanel {
+    border: none !important;
+    @include for-scroll-plus() {
+      height: 90vh;
+    }
+    @include for-scroll-700() {
+      height: 87vh;
+    }
+    @include for-scroll-600() {
+      height: 85vh;
+    }
+    @include for-scroll-500() {
+      height: 80vh;
+    }
+    @include for-scroll-400() {
+      height: 76vh;
+    }
+    @include for-scroll-350() {
+      height: 70vh;
+    }
+  }
+}

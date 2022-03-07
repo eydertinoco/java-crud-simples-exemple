@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <ui:insert name="title">
+        <title>Projeto Base</title>
+    </ui:insert>
+
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Montserrat'/>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"/>
+    <link rel="StyleSheet" type="text/css" href="../css/templateGeral.css"/>
+
+    <script type="text/javascript">
+        PrimeFaces.locales['pt'] = {
+            closeText: 'Fechar',
+            prevText: 'Anterior',
+            nextText: 'Próximo',
+            currentText: 'Começo',
+            monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio',
+                'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro',
+                'Novembro', 'Dezembro'],
+            monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun',
+                'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+            dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta',
+                'Sexta', 'Sábado'],
+            dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
+            dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
+            weekHeader: 'Semana',
+            firstDay: 0,
+            isRTL: false,
+            showMonthAfterYear: false,
+            yearSuffix: '',
+            timeOnlyTitle: 'Só Horas',
+            timeText: 'Tempo',
+            hourText: 'Hora',
+            minuteText: 'Minuto',
+            secondText: 'Segundo',
+            ampm: false,
+            month: 'Mês',
+            week: 'Semana',
+            day: 'Dia',
+            allDayText: 'Todo o Dia'
+        };
+    </script>
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-172004703-11']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</h:head>
+
+<h:body>
+
+    <div class="head">
+
+        <div id="topbar">
+            <div class="navbar" id="navbar">
+                <p:audio value="../music/InicialTheme.mp3" controls="false" autoplay="true" loop="true"/>
+                <a href="#home">Principal</a>
+                <a href="#news">Novidades</a>
+                <a href="#contact">Contato</a>
+                <a href="#about">Sobre</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+
+            <div id="top-info">
+                <p:panelGrid columns="2" layout="grid" styleClass="menu menu__top"
+                             columnClasses="ui-g-12 ui-md-4 ui-lg-4, ui-g-12 ui-md-4 ui-lg-4">
+                    <p:outputLabel value="Username:" for="userAcesso"/>
+                    <p:inputText id="userAcesso" required="true"/>
+                    <p:outputLabel value="Senha:" for="senhaAcesso"/>
+                    <p:password id="senhaAcesso" required="true"/>
+                </p:panelGrid>
+
+                <!--<p:commandLink value="Acesso Restrito" process="@this" style="width: 150px;"
+                               action="#{areaAdmistrativaController.abrirDialogLoginAreaRestrita()}"/>
+                <div align="right" class="menu__top__redeSocial">
+                    <a href="https://www.facebook.com/PrefeituraDeMaceio"
+                       target="blank" class="menu__top__redeSocial__link">
+                        <img src="../imgs/social/face_wb.png" alt="Facebook" class="menu__top__redeSocial__img"/>
+                    </a>
+                    <a href="https://www.instagram.com/prefeiturademaceio/"
+                       target="blank" class="menu__top__redeSocial__link">
+                        <img src="../imgs/social/inst_bw.png" alt="Instagram" class="menu__top__redeSocial__img"/>
+                    </a>
+                    <a href="https://twitter.com/PrefMaceio"
+                       target="blank" class="menu__top__redeSocial__link">
+                        <img src="../imgs/social/twit_bw.png" alt="Twitter" class="menu__top__redeSocial__img"/>
+                    </a>
+                    <a href="https://www.youtube.com/user/PrefeituraDeMaceio"
+                       target="blank" class="menu__top__redeSocial__link">
+                        <img src="../imgs/social/what_bw.png" alt="Whatsapp" class="menu__top__redeSocial__img"/>
+                    </a>
+                </div>-->
+            </div>
+        </div>
+
+    </div>
+
+    <div id="container">
+
+        <div id="avisos">
+            <ui:insert name="avisos"/>
+        </div>
+
+        <ui:insert name="body"/>
+
+    </div>
+
+    <!-- Footer -->
+
+    <div align="center" class="footer">
+        <div class="footer__info">
+            <p class="footer__text footer__text__t1">Prefeitura de Maceió</p>
+            <p class="footer__text footer__text__t2">R. Sá e Albuquerque, 235 - Jaraguá Maceió - AL. 57022-180</p>
+            <p class="footer__text footer__text__t3">Versão: DTI - SEMGE</p>
+            <div class="footer__redeSocial">
+                <a href="https://www.facebook.com/PrefeituraDeMaceio"
+                   target="blank" class="footer__redeSocial__link">
+                    <img src="../imgs/social/face_wb.png" alt="Facebook" class="footer__redeSocial__icon"/>
+                </a>
+                <a href="https://www.instagram.com/prefeiturademaceio/"
+                   target="blank" class="footer__redeSocial__link">
+                    <img src="../imgs/social/inst_bw.png" alt="Instagram" class="footer__redeSocial__icon"/>
+                </a>
+                <a href="https://twitter.com/PrefMaceio"
+                   target="blank" class="footer__redeSocial__link">
+                    <img src="../imgs/social/twit_bw.png" alt="Twitter" class="footer__redeSocial__icon"/>
+                </a>
+                <a href="https://www.youtube.com/user/PrefeituraDeMaceio"
+                   target="blank" class="footer__redeSocial__link">
+                    <img src="../imgs/social/what_bw.png" alt="Whatsapp" class="footer__redeSocial__icon"/>
+                </a>
+            </div>
+        </div>
+    </div>
+</h:body>
+</html>

@@ -1,0 +1,7 @@
+Instalação do SASS:
+npm install -g sass
+
+Para tranformar informações de SCSS para CSS:
+sass --watch WebContent/scss/templateGeral.scss:WebContent/css/templateGeral.css
+
+sass --watch scss/templateGeral.scss:css/templateGeral.css

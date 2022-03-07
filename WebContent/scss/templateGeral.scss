@@ -1,0 +1,18 @@
+$azulClaro: #024059;
+$azulEscuro: #023E73;
+$laranja: #BF6415;
+$branco: #D9CCC1;
+$marrom: #8C503A;
+$transparente: none;
+
+@mixin for-phone-only {
+  @media (max-width: 640.98px) { @content; }
+}
+@mixin for-tablet-only {
+  @media (min-width: 641px) and (max-width: 1024.98px) { @content; }
+}
+@mixin for-desktop-only {
+  @media (min-width: 1025px) { @content; }
+}
+
+@import 'header/header', 'body/body', 'footer/footer', 'generico/scroll', 'primefacesEdition/panelgrid';
