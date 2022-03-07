@@ -39,7 +39,7 @@ public class CropUploaderBean implements Serializable {
     }
 
     public void handleFileUpload(FileUploadEvent event) {
-//        this.originalImageFile = null;
+        this.originalImageFile = null;
         this.croppedImage = null;
         UploadedFile file = event.getFile();
         if (file != null && file.getContent() != null && file.getContent().length > 0 && file.getFileName() != null) {
