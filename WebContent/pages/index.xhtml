@@ -9,48 +9,42 @@
 <ui:composition template="/template/templateGeral.xhtml">
     <ui:define name="body">
 
-        <div id="fundologo" class="fundologo">
-            <p:video value="../music/One_Piece_OP.mp4" style="width: 100% !important;"
-                     player="mp4" autoplay="true" loop="true" muted="true"/>
-<!--            <img alt="user header" class="fundologo__img" src="../imgs/mapaFundo.png" />-->
+<!--        <div id="fundologo" class="fundologo">-->
+<!--            <p:video value="../music/One_Piece_OP.mp4" style="width: 100% !important;"-->
+<!--                     player="mp4" autoplay="true" loop="true" muted="true"/>-->
+<!--&lt;!&ndash;            <img alt="user header" class="fundologo__img" src="../imgs/mapaFundo.png" />&ndash;&gt;-->
+<!--        </div>-->
+
+<!--        <div id="logotipo" class="panelLogo">-->
+<!--            <a href="http://www.maceio.al.gov.br" target="blank">-->
+<!--                <img alt="user header" class="panelLogo__img"-->
+<!--                     src="../imgs/logotipo.png" />-->
+<!--            </a>-->
+<!--        </div>-->
+
+
+        <p:growl id="messages" showDetail="true"/>
+        <h:form>
+
+        <div class="card">
+            <h5>Single</h5>
+            <h:form enctype="multipart/form-data">
+                <p:fileUpload value="#{fileUploadView.file}" mode="simple" skinSimple="true"/>
+
+                <p:commandButton value="Submit" ajax="false" action="#{fileUploadView.upload}" styleClass="p-mt-3 ui-button-outlined p-d-block"/>
+            </h:form>
         </div>
 
-        <div id="logotipo" class="panelLogo">
-            <a href="http://www.maceio.al.gov.br" target="blank">
-                <img alt="user header" class="panelLogo__img"
-                     src="../imgs/logotipo.png" />
-            </a>
+        <div class="card">
+            <h5>Multiple</h5>
+            <h:form enctype="multipart/form-data">
+                <p:fileUpload value="#{fileUploadView.files}" mode="simple" skinSimple="true" multiple="true"/>
+                <p:commandButton value="Submit" ajax="false" action="#{fileUploadView.uploadMultiple}" styleClass="p-mt-3 ui-button-outlined p-d-block"/>
+            </h:form>
         </div>
 
-        <p:card style="width: 25em">
-            <f:facet name="header">
-                <img alt="user header" src="../imgs/55b670096de2eec55e31d38e92798bda-pizza-logotipo-com-coroas.png"/>
-            </f:facet>
-            <f:facet name="title">
-                Advanced Card
-            </f:facet>
-            <f:facet name="subtitle">
-                Card subtitle
-            </f:facet>
+        </h:form>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
-                quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
-
-            <f:facet name="footer">
-                <p:commandButton icon="pi pi-check" value="Save"/>
-                <p:commandButton icon="pi pi-times" value="Cancel" styleClass="ui-button-secondary" style="margin-left: .5em"/>
-            </f:facet>
-        </p:card>
-
-        <h5>Severities</h5>
-        <p:button value="Primary" />
-        <p:button value="Secondary" styleClass="ui-button-secondary" />
-        <p:button value="Success" styleClass="ui-button-success" />
-        <p:button value="Info" styleClass="ui-button-info" />
-        <p:button value="Warning" styleClass="ui-button-warning" />
-        <p:button value="Help" styleClass="ui-button-help" />
-        <p:button value="Danger" styleClass="ui-button-danger" />
-        
     </ui:define>
 </ui:composition>
 
